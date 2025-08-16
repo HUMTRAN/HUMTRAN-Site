@@ -113,42 +113,14 @@ const Page = () => {
     );
   };
 
-  // About us cards data
-  const aboutCards = [
-    {
-      title: "WHO WE ARE",
-      content:
-        "We are a foundation dedicated to bridging the gap between traditional education and real-world problem solving through Science, Technology, Engineering, Arts, and Mathematics (STEAM) by empowering young minds both within and beyond the academic community to foster innovation, create values and drive transformation.",
-      bgColor: "bg-[#f4ede6]",
-      textColor: "text-[#1c1b1a]",
-      shadow: "",
-    },
-    {
-      title: "WHAT WE DO",
-      content:
-        "We involve students in real-world projects that address genuine challenges. Working alongside experts and professionals from various fields, they gain mentorship, industry knowledge, and practical experience. These collaborations help students bring innovative ideas to life while building solutions that truly matter",
-      bgColor: "bg-[#5e3b28]",
-      textColor: "text-white",
-      shadow: "shadow-[4px_4px_20px_#00000040]",
-    },
-    {
-      title: "OUR GOAL",
-      content:
-        "We empower the next generation to use their talents, ideas, and skills to inspire change, create value, and drive transformation.",
-      bgColor: "bg-[#f4ede6]",
-      textColor: "text-[#1c1b1a]",
-      shadow: "",
-    },
-  ];
-
   return (
     <div className="flex flex-col items-center relative bg-[#f5fcff] overflow-hidden">
       {/* Header/Navigation */}
       <header className="flex flex-col items-center relative self-stretch w-full flex-[0_0_auto]">
-        <nav className="flex items-center justify-between px-[50px] py-0 relative self-stretch w-full flex-[0_0_auto]">
+        <nav className="flex items-center justify-between px-4 md:px-[50px] py-2 md:py-0 relative self-stretch w-full flex-[0_0_auto]">
           <div className="inline-flex flex-col items-start gap-2.5 relative flex-[0_0_auto] rounded-[100px]">
             <Image
-              className="relative"
+              className="relative w-12 h-12 md:w-[87px] md:h-[86px]"
               alt="Humtran LOGO"
               src="/logo.svg"
               width={87}
@@ -156,47 +128,43 @@ const Page = () => {
             />
           </div>
 
-          <div className="flex  items-center relative self-stretch">
-
+          <div className="flex items-center relative self-stretch overflow-x-auto md:overflow-visible">
             {navItems.map((item, index) => (
               <React.Fragment key={item.title}>
                 <div
-                  className={`inline-flex items-center justify-center px-[50px] py-5 relative self-stretch flex-[0_0_auto] ${index < navItems.length - 1 ? 'border-r border-[#351F14]' : ""
-                    }  ${item.active ? "bg-[#351f14]" : ""}`}
+                  className={`inline-flex items-center justify-center px-4 md:px-[50px] py-3 md:py-5 relative self-stretch flex-[0_0_auto] ${index < navItems.length - 1 ? 'border-r border-[#27ABDC]' : ""
+                    }  ${item.active ? "bg-[#27ABDC]" : ""}`}
                 >
                   <div
-                    className={`relative  font-work font-normal ${item.active ? "text-white" : "text-[#1c1b1a]"} text-lg tracking-[0] leading-[27px] whitespace-nowrap`}
+                    className={`relative font-work font-normal ${item.active ? "text-white" : "text-[#1c1b1a]"} text-sm md:text-lg tracking-[0] leading-[27px] whitespace-nowrap`}
                   >
                     {item.title}
                   </div>
                 </div>
-
-
-
               </React.Fragment>
             ))}
           </div>
         </nav>
 
-        <Separator className="relative self-stretch w-full h-px bg-[#351f14]" />
+        <Separator className="relative self-stretch w-full h-px bg-[#27ABDC]" />
       </header>
 
       {/* Hero Section */}
-      <section className="flex flex-col items-start gap-[30px] pt-[50px] pb-[150px] px-[50px] relative self-stretch w-full flex-[0_0_auto]">
-        <div className="flex max-w-[1340px] items-end gap-[39px] relative w-full flex-[0_0_auto]">
-          <div className="inline-flex flex-col items-start justify-end gap-5 relative flex-[0_0_auto]">
-            <h1 className="relative w-fit mt-[-1.00px] font-clash font-normal text-[#351f14] text-[70px] tracking-[0] leading-[normal] whitespace-nowrap">
+      <section className="flex flex-col items-start gap-6 md:gap-[30px] pt-6 md:pt-[50px] pb-12 md:pb-[150px] px-4 md:px-[50px] relative self-stretch w-full flex-[0_0_auto]">
+        <div className="flex flex-col md:flex-row max-w-[1340px] items-start md:items-end gap-6 md:gap-[39px] relative w-full flex-[0_0_auto]">
+          <div className="inline-flex flex-col items-start justify-end relative flex-[0_0_auto]">
+            <h1 className="relative w-fit mt-[-1.00px] font-clash font-bold text-[#170902] text-4xl md:text-[70px] tracking-[0] leading-none">
               HUMTRAN
             </h1>
 
-            <p className="relative w-fit font-work font-normal italic text-[#351f14] text-lg tracking-[0] leading-[normal] whitespace-nowrap">
+            <p className="relative w-fit font-work font-normal italic text-[#170902] text-sm md:text-lg tracking-[0] leading-none">
               Empowering minds &amp; driving transformation
             </p>
           </div>
         </div>
 
-        <div className="flex items-center justify-between relative self-stretch w-full flex-[0_0_auto]">
-          <p className="relative w-96 font-work font-normal text-[#1c1b1a] text-lg tracking-[0] leading-[27px]">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-0 relative self-stretch w-full flex-[0_0_auto]">
+          <p className="relative w-full md:w-96 font-work font-normal text-[#1c1b1a] text-base md:text-lg tracking-[0] leading-relaxed md:leading-[27px]">
             We are a foundation dedicated to bridging the gap between
             conventional education and real-world problem-solving through
             Science, Technology, Engineering, Arts, and Mathematics (STEAM),
@@ -205,74 +173,69 @@ const Page = () => {
             impact and transformation.
           </p>
 
-          <Image
-            className="relative"
-            alt="Hero image humtran"
-            src="/hero-image.png"
-            width={854}
-            height={477}
-          />
-        </div>
-      </section>
-
-      {/* About Us Section */}
-      <section className="flex flex-col items-start gap-[50px] pt-[50px] pb-[100px] px-0 relative self-stretch w-full flex-[0_0_auto] bg-[#351f14]">
-        <div className="inline-flex h-[67px] items-center justify-center px-[50px] py-0 relative">
-          <h2 className="relative w-fit font-clash font-normal text-[#f4ede6] text-[50px] tracking-[0] leading-[normal] whitespace-nowrap">
-            ABOUT US
-          </h2>
-        </div>
-
-        <div className="flex flex-col items-center relative self-stretch w-full flex-[0_0_auto]">
-          <div className="flex max-w-[1340px] h-[415px] items-start justify-center gap-[50px] relative w-full">
-            {aboutCards.map((card, index) => (
-              <Card
-                key={index}
-                className={`inline-flex flex-col items-start gap-2.5 p-5 relative self-stretch flex-[0_0_auto] ${card.bgColor} ${card.shadow} rounded-none border-none`}
-              >
-                <CardContent className="flex flex-col w-[343px] items-start gap-10 px-0 py-5 relative flex-[0_0_auto]">
-                  <h3
-                    className={`relative self-stretch mt-[-1.00px] font-work font-bold ${card.textColor} text-xl tracking-[0] leading-[normal]`}
-                  >
-                    {card.title}
-                  </h3>
-
-                  <p
-                    className={`relative ${index === 2 ? "w-[343px]" : "self-stretch"} font-work font-medium ${card.textColor} text-lg tracking-[0] leading-[27px]`}
-                  >
-                    {card.content}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="w-full md:w-auto flex justify-center">
+            <Image
+              className="relative w-full max-w-md md:max-w-none md:w-[854px] h-auto md:h-[477px] object-contain"
+              alt="Hero image humtran"
+              src="/hero-image.png"
+              width={854}
+              height={477}
+            />
           </div>
         </div>
       </section>
 
+      {/* About Us Section */}
+      <div className="self-stretch pt-6 md:pt-12 pb-12 md:pb-24 inline-flex flex-col justify-start items-start gap-4 md:gap-7 px-4 md:px-0">
+        <div className="h-12 md:h-16 px-4 md:px-24 bg-slate-50 inline-flex justify-center items-center w-full">
+          <div className="justify-start text-[#170902] text-2xl md:text-5xl font-semibold font-clash">ABOUT US</div>
+        </div>
+        <div className="self-stretch flex flex-col justify-start items-center">
+          <div className="w-full max-w-[1340px] flex flex-col md:inline-flex md:flex-row justify-center items-stretch gap-4 md:gap-12">
+            <div className="w-full md:flex-1 p-4 md:p-5 outline-2 outline-sky-500 inline-flex flex-col justify-start items-start gap-2.5 min-h-[300px] md:min-h-[400px] hover:bg-blue-50 transition-colors cursor-pointer">
+              <div className="w-full py-3 md:py-5 flex flex-col justify-start items-start gap-6 md:gap-10">
+                <div className="self-stretch justify-start text-[#170902] text-lg md:text-xl font-bold font-work">WHO WE ARE</div>
+                <div className="self-stretch justify-start text-[#170902] text-base md:text-lg font-medium font-work leading-relaxed">We are a foundation dedicated to bridging the gap between traditional education and real-world problem solving through Science, Technology, Engineering, Arts, and Mathematics (STEAM) by empowering young minds both within and beyond the academic community to foster innovation, create values and drive transformation.</div>
+              </div>
+            </div>
+            <div className="w-full md:flex-1 p-4 md:p-5 shadow-[4px_4px_20px_0px_rgba(0,0,0,0.25)] outline-2 outline-sky-500 inline-flex flex-col justify-start items-start gap-2.5 min-h-[300px] md:min-h-[400px] hover:bg-blue-50 transition-colors cursor-pointer">
+              <div className="w-full py-3 md:py-5 flex flex-col justify-start items-start gap-6 md:gap-10">
+                <div className="self-stretch justify-start text-[#170902] text-lg md:text-xl font-bold font-work">WHAT WE DO</div>
+                <div className="self-stretch justify-start text-[#170902] text-base md:text-lg font-medium font-work leading-relaxed">We involve students in real-world projects that address genuine challenges. Working alongside experts and professionals from various fields, they gain mentorship, industry knowledge, and practical experience. These collaborations help students bring innovative ideas to life while building solutions that truly matter</div>
+              </div>
+            </div>
+            <div className="w-full md:flex-1 p-4 md:p-5 outline-2 outline-sky-500 inline-flex flex-col justify-start items-start gap-2.5 min-h-[300px] md:min-h-[400px] hover:bg-blue-50 transition-colors cursor-pointer">
+              <div className="w-full py-3 md:py-5 flex flex-col justify-start items-start gap-6 md:gap-10">
+                <div className="self-stretch justify-start text-[#170902] text-lg md:text-xl font-bold font-work">OUR GOAL</div>
+                <div className="self-stretch justify-start text-[#170902] text-base md:text-lg font-medium font-work leading-relaxed">We empower the next generation to use their talents, ideas, and skills to inspire change, create value, and drive transformation.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Projects Section */}
-      <section className="flex items-center justify-between pt-[150px] pb-0 px-[50px] relative self-stretch w-full flex-[0_0_auto]">
-        <div className="flex flex-col w-[550px] items-start gap-[30px] relative">
-          <h2 className="relative w-fit mt-[-1.00px] font-clash font-normal text-[#351f14] text-[50px] text-right tracking-[0] leading-[115px] whitespace-nowrap">
+      <section className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-0 pt-12 md:pt-[150px] pb-0 px-4 md:px-[50px] relative self-stretch w-full flex-[0_0_auto]">
+        <div className="flex flex-col w-full md:w-[550px] items-start gap-4 md:gap-[30px] relative">
+          <h2 className="relative w-fit mt-[-1.00px] font-clash font-normal text-[#351f14] text-2xl md:text-[50px] text-left md:text-right tracking-[0] leading-tight md:leading-[115px]">
             ONGOING PROJECTS
           </h2>
 
-          <p className="relative w-[474px] font-work font-normal text-[#1c1b1a] text-lg tracking-[0] leading-[21px]">
+          <p className="relative w-full md:w-[474px] font-work font-normal text-[#1c1b1a] text-base md:text-lg tracking-[0] leading-relaxed md:leading-[21px]">
             {projects[currentProjectIndex].description}
           </p>
-
-
         </div>
 
-        <div className="flex w-[677px] items-center gap-5 relative">
+        <div className="flex w-full md:w-[677px] items-center gap-2 md:gap-5 relative overflow-hidden">
           <Button
             variant="ghost"
-            className="p-0 h-auto hover:scale-110 transition-transform z-50 relative"
+            className="p-0 h-auto hover:scale-110 transition-transform z-50 relative flex-shrink-0"
             onClick={goToPreviousProject}
           >
-            <ChevronLeftIcon className="w-[50px] h-[50px] text-[#351f14]" />
+            <ChevronLeftIcon className="w-8 h-8 md:w-[50px] md:h-[50px] text-[#351f14]" />
           </Button>
 
-          <div className="relative flex-1 grow h-[572px] flex items-center justify-center">
+          <div className="relative flex-1 grow h-64 md:h-[572px] flex items-center justify-center">
             <div className="relative w-full h-full flex items-center justify-center">
               {projects.map((project, index) => {
                 const position = index - currentProjectIndex;
@@ -291,12 +254,12 @@ const Page = () => {
                   scale = '1';
                   opacity = '1';
                 } else if (isPrev) {
-                  transform = 'translateX(-120px)';
+                  transform = 'translateX(-60px) md:translateX(-120px)';
                   zIndex = 20;
                   scale = '0.8';
                   opacity = '0.7';
                 } else if (isNext) {
-                  transform = 'translateX(120px)';
+                  transform = 'translateX(60px) md:translateX(120px)';
                   zIndex = 20;
                   scale = '0.8';
                   opacity = '0.7';
@@ -317,11 +280,11 @@ const Page = () => {
                       opacity,
                     }}
                   >
-                    <Card className="flex flex-col w-[446px] items-center gap-5 shadow-[4px_4px_20px_#00000040] border-none rounded-none">
+                    <Card className="flex flex-col w-48 md:w-[446px] items-center gap-2 md:gap-5 shadow-[4px_4px_20px_#00000040] border-none rounded-none">
                       <CardContent className="p-0 w-full">
-                        <div className="relative self-stretch w-full h-[540px] shadow-[4px_4px_50px_#0000000d]"
+                        <div className="relative self-stretch w-full h-48 md:h-[540px] shadow-[4px_4px_50px_#0000000d]"
                           style={{ backgroundImage: `url(${project.mainImage})`, backgroundSize: 'cover', backgroundPosition: '50% 50%' }} />
-                        <p className="relative self-stretch font-work font-semibold text-[#351f14] text-lg text-center tracking-[0] leading-[normal] py-2">
+                        <p className="relative self-stretch font-work font-semibold text-[#351f14] text-sm md:text-lg text-center tracking-[0] leading-[normal] py-1 md:py-2">
                           {project.title}
                         </p>
                       </CardContent>
@@ -334,21 +297,21 @@ const Page = () => {
 
           <Button
             variant="ghost"
-            className="p-0 h-auto hover:scale-110 transition-transform z-50 relative"
+            className="p-0 h-auto hover:scale-110 transition-transform z-50 relative flex-shrink-0"
             onClick={goToNextProject}
           >
-            <ChevronRightIcon className="w-[50px] h-[50px] text-[#351f14]" />
+            <ChevronRightIcon className="w-8 h-8 md:w-[50px] md:h-[50px] text-[#351f14]" />
           </Button>
         </div>
       </section>
 
       {/* Gallery Section */}
-      <section className="flex flex-col items-center gap-[50px] px-0 py-[150px] relative self-stretch w-full flex-[0_0_auto]">
-        <h2 className="relative self-stretch mt-[-1.00px] font-clash font-normal text-[#351f14] text-[50px] text-center tracking-[0] leading-[normal]">
+      <section className="flex flex-col items-center gap-6 md:gap-[50px] px-4 md:px-0 py-12 md:py-[150px] relative self-stretch w-full flex-[0_0_auto]">
+        <h2 className="relative self-stretch mt-[-1.00px] font-clash font-normal text-[#351f14] text-2xl md:text-[50px] text-center tracking-[0] leading-[normal]">
           GALLERY
         </h2>
 
-        <div className="relative w-[1340px] h-[795px] overflow-hidden">
+        <div className="relative w-full max-w-[1340px] h-48 md:h-[795px] overflow-hidden mx-auto">
           <div
             className={`flex ${isTransitioning ? 'transition-transform duration-500 ease-in-out' : ''}`}
             style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
@@ -356,7 +319,7 @@ const Page = () => {
             {infiniteGalleryImages.map((image, index) => (
               <div key={index} className="w-full flex-shrink-0">
                 <Image
-                  className="w-full h-[795px] object-cover"
+                  className="w-full h-48 md:h-[795px] object-cover"
                   alt={image.alt}
                   src={image.src}
                   width={1340}
@@ -371,32 +334,30 @@ const Page = () => {
           <Button
             variant="outline"
             size="icon"
-            className="rounded-full bg-[#26AADB] border-none h-8 w-8 hover:bg-[#1d8eb8]"
+            className="rounded-full bg-[#26AADB] border-none h-6 w-6 md:h-8 md:w-8 hover:bg-[#1d8eb8]"
             onClick={goToPrevious}
           >
-            <ChevronLeftIcon className="h-4 w-4 text-white" />
+            <ChevronLeftIcon className="h-3 w-3 md:h-4 md:w-4 text-white" />
           </Button>
           <Button
             variant="outline"
             size="icon"
-            className="rounded-full bg-[#26AADB] border-none h-8 w-8 hover:bg-[#1d8eb8]"
+            className="rounded-full bg-[#26AADB] border-none h-6 w-6 md:h-8 md:w-8 hover:bg-[#1d8eb8]"
             onClick={goToNext}
           >
-            <ChevronRightIcon className="h-4 w-4 text-white" />
+            <ChevronRightIcon className="h-3 w-3 md:h-4 md:w-4 text-white" />
           </Button>
         </div>
-
-
       </section>
 
       {/* Call to Action Section */}
-      <section className="flex flex-col w-full items-center px-[50px] relative flex-[0_0_auto] h-[432px]" style={{ backgroundImage: 'linear-gradient(0deg, rgba(53,31,20,0.6) 0%, rgba(53,31,20,0.6) 100%), url(/footer.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div className="flex flex-col max-w-[1000px] w-[1000px] items-center justify-center gap-[30px] relative flex-[0_0_auto] h-full">
-          <h2 className="relative self-stretch mt-[-1.00px] font-clash font-normal text-white text-[50px] text-center tracking-[0] leading-[normal]">
+      <section className="flex flex-col w-full items-center px-4 md:px-[50px] relative flex-[0_0_auto] h-64 md:h-[432px]" style={{ backgroundImage: 'linear-gradient(0deg, rgba(53,31,20,0.6) 0%, rgba(53,31,20,0.6) 100%), url(/footer.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="flex flex-col max-w-[1000px] w-full md:w-[1000px] items-center justify-center gap-4 md:gap-[30px] relative flex-[0_0_auto] h-full px-4">
+          <h2 className="relative self-stretch mt-[-1.00px] font-clash font-normal text-white text-2xl md:text-[50px] text-center tracking-[0] leading-[normal]">
             JOIN US NOW
           </h2>
 
-          <p className="relative self-stretch font-work font-medium text-white text-lg text-center tracking-[0] leading-[normal]">
+          <p className="relative self-stretch font-work font-medium text-white text-sm md:text-lg text-center tracking-[0] leading-relaxed md:leading-[normal]">
             Every idea has the power to change a life. Join us in shaping the
             next generation of innovators, creators, and problem-solvers. Be
             part of the transformation because the future is built by those who
@@ -406,41 +367,38 @@ const Page = () => {
       </section>
 
       {/* Footer */}
-      <footer className="flex flex-col items-start gap-[50px] px-0 py-[50px] relative self-stretch w-full flex-[0_0_auto] bg-[#351f14]">
-        <div className="flex items-center justify-between px-[50px] py-0 relative self-stretch w-full flex-[0_0_auto]">
-          <div className="inline-flex items-center gap-10 relative flex-[0_0_auto]">
+      <footer className="flex flex-col items-start gap-6 md:gap-[50px] px-0 py-6 md:py-[50px] relative self-stretch w-full flex-[0_0_auto] bg-[#351f14]">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0 px-4 md:px-[50px] py-0 relative self-stretch w-full flex-[0_0_auto]">
+          <div className="inline-flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-10 relative flex-[0_0_auto]">
             {navItems.map((item, index) => (
               <a
                 key={index}
                 href="#"
-                className="relative w-fit mt-[-1.00px] font-work font-medium text-white text-lg tracking-[0] leading-[normal] whitespace-nowrap"
+                className="relative w-fit mt-[-1.00px] font-work font-medium text-white text-sm md:text-lg tracking-[0] leading-[normal] whitespace-nowrap"
               >
                 {item.title}
               </a>
             ))}
           </div>
 
-          <div className="flex gap-4">
-            <Youtube className="w-5 h-5 text-white" />
-            <Facebook className="w-5 h-5 text-white" />
-            <X className="w-5 h-5 text-white" />
-            <Linkedin className="w-5 h-5 text-white" />
+          <div className="flex gap-4 order-first md:order-none">
+            <Youtube className="w-4 h-4 md:w-5 md:h-5 text-white" />
+            <Facebook className="w-4 h-4 md:w-5 md:h-5 text-white" />
+            <X className="w-4 h-4 md:w-5 md:h-5 text-white" />
+            <Linkedin className="w-4 h-4 md:w-5 md:h-5 text-white" />
           </div>
 
-          <Button className="inline-flex items-center justify-center gap-2.5 p-[30px] relative flex-[0_0_auto] bg-[#26aadb] rounded-none hover:bg-[#1d8eb8]">
-            <span className="relative w-fit mt-[-1.00px] font-work font-semibold text-white text-lg tracking-[0] leading-[normal] whitespace-nowrap">
+          <Button className="inline-flex items-center justify-center gap-2.5 p-4 md:p-[30px] relative flex-[0_0_auto] bg-[#26aadb] rounded-none hover:bg-[#1d8eb8] w-full md:w-auto">
+            <span className="relative w-fit mt-[-1.00px] font-work font-semibold text-white text-sm md:text-lg tracking-[0] leading-[normal] whitespace-nowrap">
               JOIN US
             </span>
           </Button>
         </div>
 
-        <Separator
-          className="relative self-stretch w-full h-px text-white"
+        <Separator className="relative self-stretch w-full h-px text-white" />
 
-        />
-
-        <div className="flex items-center justify-center gap-2.5 px-[50px] py-0 relative self-stretch w-full flex-[0_0_auto]">
-          <p className="relative flex-1 mt-[-1.00px] font-work font-normal text-white text-lg tracking-[0] leading-[21px]">
+        <div className="flex items-center justify-center gap-2.5 px-4 md:px-[50px] py-0 relative self-stretch w-full flex-[0_0_auto]">
+          <p className="relative flex-1 mt-[-1.00px] font-work font-normal text-white text-sm md:text-lg tracking-[0] leading-[21px] text-center md:text-left">
             Copyright © 2021 — Humtran. All rights reserved.
           </p>
         </div>
