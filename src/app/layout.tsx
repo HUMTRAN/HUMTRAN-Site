@@ -14,7 +14,7 @@ const clashDisplay = localFont({
 const workSans = Work_Sans({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-work-sans',
+  variable: '--font-work',
 })
 export const metadata: Metadata = {
   title: "Humtran",

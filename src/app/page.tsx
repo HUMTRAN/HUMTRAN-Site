@@ -117,7 +117,7 @@ const Page = () => {
     <div className="flex flex-col items-center relative bg-[#f5fcff] overflow-hidden">
       {/* Header/Navigation */}
       <header className="flex flex-col items-center relative self-stretch w-full flex-[0_0_auto]">
-        <nav className="flex items-center justify-between px-4 md:px-[50px] py-2 md:py-0 relative self-stretch w-full flex-[0_0_auto]">
+        <nav className="flex items-center justify-between pl-4 md:pl-[50px] py-2 md:py-0 relative self-stretch w-full flex-[0_0_auto]">
           <div className="inline-flex flex-col items-start gap-2.5 relative flex-[0_0_auto] rounded-[100px]">
             <Image
               className="relative w-12 h-12 md:w-[87px] md:h-[86px]"
@@ -157,7 +157,7 @@ const Page = () => {
               HUMTRAN
             </h1>
 
-            <p className="relative w-fit font-work font-normal italic text-[#170902] text-sm md:text-lg tracking-[0] leading-none">
+            <p className="relative w-fit font-work font-normal italic text-[#170902] text-sm md:text-base tracking-[0] leading-none">
               Empowering minds &amp; driving transformation
             </p>
           </div>
@@ -165,12 +165,7 @@ const Page = () => {
 
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-0 relative self-stretch w-full flex-[0_0_auto]">
           <p className="relative w-full md:w-96 font-work font-normal text-[#1c1b1a] text-base md:text-lg tracking-[0] leading-relaxed md:leading-[27px]">
-            We are a foundation dedicated to bridging the gap between
-            conventional education and real-world problem-solving through
-            Science, Technology, Engineering, Arts, and Mathematics (STEAM),
-            empowering young minds within and beyond the academic community to
-            foster innovation, create values and drive meaningful socio-economic
-            impact and transformation.
+            We are a foundation dedicated to bridging the gap between conventional education and real-world problem-solving through Science, Technology, Engineering, Arts, and Mathematics (STEAM), empowering young minds within and beyond the academic community to foster innovation, create values, drive meaningful sociopolitical, socioeconomic impact and transformation.
           </p>
 
           <div className="w-full md:w-auto flex justify-center">
@@ -186,33 +181,32 @@ const Page = () => {
       </section>
 
       {/* About Us Section */}
-      <div className="self-stretch pt-6 md:pt-12 pb-12 md:pb-24 inline-flex flex-col justify-start items-start gap-4 md:gap-7 px-4 md:px-0">
-        <div className="h-12 md:h-16 px-4 md:px-24 bg-slate-50 inline-flex justify-center items-center w-full">
-          <div className="justify-start text-[#170902] text-2xl md:text-5xl font-semibold font-clash">ABOUT US</div>
-        </div>
-        <div className="self-stretch flex flex-col justify-start items-center">
-          <div className="w-full max-w-[1340px] flex flex-col md:inline-flex md:flex-row justify-center items-stretch gap-4 md:gap-12">
-            <div className="w-full md:flex-1 p-4 md:p-5 outline-2 outline-sky-500 inline-flex flex-col justify-start items-start gap-2.5 min-h-[300px] md:min-h-[400px] hover:bg-blue-50 transition-colors cursor-pointer">
-              <div className="w-full py-3 md:py-5 flex flex-col justify-start items-start gap-6 md:gap-10">
-                <div className="self-stretch justify-start text-[#170902] text-lg md:text-xl font-bold font-work">WHO WE ARE</div>
-                <div className="self-stretch justify-start text-[#170902] text-base md:text-lg font-medium font-work leading-relaxed">We are a foundation dedicated to bridging the gap between traditional education and real-world problem solving through Science, Technology, Engineering, Arts, and Mathematics (STEAM) by empowering young minds both within and beyond the academic community to foster innovation, create values and drive transformation.</div>
+      <div className="self-stretch p-[50px] inline-flex flex-col justify-start items-start gap-7">
+        <div className="self-stretch flex flex-col justify-start items-start gap-7">
+          <div className="justify-start text-stone-950 text-5xl font-semibold font-clash">ABOUT US</div>
+          <div className="self-stretch  inline-flex justify-between items-start">
+            <div className="self-stretch p-5 outline  outline-sky-500 inline-flex flex-col justify-start items-start gap-2.5">
+              <div className="w-80 py-5 flex flex-col justify-start items-start gap-10 ">
+                <div className="self-stretch justify-start text-stone-900 text-xl font-bold font-work">WHO WE ARE</div>
+                <div className="self-stretch justify-start text-stone-900 text-lg font-medium font-work leading-relaxed">We are a foundation dedicated to bridging the gap between traditional education and real-world problem solving through Science, Technology, Engineering, Arts, and Mathematics (STEAM) by empowering young minds both within and beyond the academic community to foster innovation, create values and drive transformation.</div>
               </div>
             </div>
-            <div className="w-full md:flex-1 p-4 md:p-5 shadow-[4px_4px_20px_0px_rgba(0,0,0,0.25)] outline-2 outline-sky-500 inline-flex flex-col justify-start items-start gap-2.5 min-h-[300px] md:min-h-[400px] hover:bg-blue-50 transition-colors cursor-pointer">
-              <div className="w-full py-3 md:py-5 flex flex-col justify-start items-start gap-6 md:gap-10">
-                <div className="self-stretch justify-start text-[#170902] text-lg md:text-xl font-bold font-work">WHAT WE DO</div>
-                <div className="self-stretch justify-start text-[#170902] text-base md:text-lg font-medium font-work leading-relaxed">We involve students in real-world projects that address genuine challenges. Working alongside experts and professionals from various fields, they gain mentorship, industry knowledge, and practical experience. These collaborations help students bring innovative ideas to life while building solutions that truly matter</div>
+            <div className="self-stretch p-5 outline  outline-sky-500 inline-flex flex-col justify-start items-start gap-2.5">
+              <div className="w-80 py-5 flex flex-col justify-start items-start gap-10 ">
+                <div className="self-stretch justify-start text-stone-900 text-xl font-bold font-work">WHAT WE DO</div>
+                <div className="w-80 justify-start text-stone-900 text-lg font-medium font-work leading-relaxed">We involve students in real-world projects that address genuine challenges. Working alongside experts and professionals from various fields, they gain mentorship, industry knowledge, and practical experience. These collaborations help students bring innovative ideas to life while building solutions that truly matter</div>
               </div>
             </div>
-            <div className="w-full md:flex-1 p-4 md:p-5 outline-2 outline-sky-500 inline-flex flex-col justify-start items-start gap-2.5 min-h-[300px] md:min-h-[400px] hover:bg-blue-50 transition-colors cursor-pointer">
-              <div className="w-full py-3 md:py-5 flex flex-col justify-start items-start gap-6 md:gap-10">
-                <div className="self-stretch justify-start text-[#170902] text-lg md:text-xl font-bold font-work">OUR GOAL</div>
-                <div className="self-stretch justify-start text-[#170902] text-base md:text-lg font-medium font-work leading-relaxed">We empower the next generation to use their talents, ideas, and skills to inspire change, create value, and drive transformation.</div>
+            <div className="self-stretch p-5 outline  outline-sky-500 inline-flex flex-col justify-start items-start gap-2.5">
+              <div className="w-80 py-5 flex flex-col justify-start items-start gap-10 ">
+                <div className="self-stretch justify-start text-stone-900 text-xl font-bold font-work">OUR GOAL</div>
+                <div className="w-80 justify-start text-stone-900 text-lg font-medium font-work leading-relaxed">We empower the next generation to use their talents, ideas, and skills to inspire change, create value, and drive transformation.</div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
 
       {/* Projects Section */}
       <section className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-0 pt-12 md:pt-[150px] pb-0 px-4 md:px-[50px] relative self-stretch w-full flex-[0_0_auto]">

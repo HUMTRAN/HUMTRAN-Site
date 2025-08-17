@@ -122,3 +122,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .font-clash {
+    font-family: var(--font-clash);
+  }
+  .font-work {
+    font-family: var(--font-work);
+  }
+}
