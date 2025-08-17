@@ -5,9 +5,24 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import AboutUsSection from "../../about-section";
 
 const Page = () => {
+  // About Us data array
+  const aboutUsData = [
+    {
+      title: "WHO WE ARE",
+      description: "We are a foundation dedicated to bridging the gap between traditional education and real-world problem solving through Science, Technology, Engineering, Arts, and Mathematics (STEAM) by empowering young minds both within and beyond the academic community to foster innovation, create values and drive transformation."
+    },
+    {
+      title: "WHAT WE DO",
+      description: "We design unique and customizable educational solutions that promote hands-on learning, critical thinking, and creativity through partnerships with academic and non-academic institutions, community programs, and individual initiatives within our global network."
+    },
+    {
+      title: "OUR GOAL",
+      description: "Our goal is to cultivate a generation of innovative thinkers and problem-solvers who are equipped with the skills, mindset, and confidence to tackle real-world challenges and contribute meaningfully to society."
+    }
+  ];
+
   // Navigation items
   const navItems = [
     { title: "HOME", active: true },
@@ -32,27 +47,28 @@ const Page = () => {
       mainImage: "/security-app.png"
     },
     {
-      title: "PLASTIC FLOOR FINISHING",
-      description: "A group of students has embarked on a creative project that transforms discarded PET bottles into materials for floor finishing. By recycling and processing the bottles, they aim to produce durable, cost-effective, and eco-friendly alternatives to conventional floor finishes.",
-      mainImage: "/floor.png"
+      title: "EDUCATION PLATFORM",
+      description: "An innovative learning platform that connects students with industry mentors for hands-on project experience.",
+      mainImage: "/security-app.png"
     },
-
+    {
+      title: "COMMUNITY HELPER",
+      description: "A social impact project that brings together volunteers and communities to solve local challenges.",
+      mainImage: "/security-app.png"
+    },
+    {
+      title: "GREEN TECH SOLUTION",
+      description: "Sustainable technology projects that address environmental challenges through student innovation.",
+      mainImage: "/security-app.png"
+    }
   ];
 
   // Gallery state
   const [currentImageIndex, setCurrentImageIndex] = useState(1); // Start at 1 (first real image)
   const [isTransitioning, setIsTransitioning] = useState(true);
 
-  // Projects state - Updated for slider
-  const [currentProjectIndex, setCurrentProjectIndex] = useState(1); // Start at 1 (first real project)
-  const [isProjectTransitioning, setIsProjectTransitioning] = useState(true);
-
-  // Create infinite projects array with clones
-  const infiniteProjects = [
-    { ...projects[projects.length - 1] }, // Clone of last project
-    ...projects,
-    { ...projects[0] } // Clone of first project
-  ];
+  // Projects state
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
 
   // Create infinite gallery array with clones
   const infiniteGalleryImages = [
@@ -89,25 +105,6 @@ const Page = () => {
     }
   }, [currentImageIndex, galleryImages.length, infiniteGalleryImages.length]);
 
-  // Handle infinite loop transitions for projects
-  useEffect(() => {
-    if (currentProjectIndex === 0) {
-      // At first clone, jump to last real project
-      setTimeout(() => {
-        setIsProjectTransitioning(false);
-        setCurrentProjectIndex(projects.length);
-        setTimeout(() => setIsProjectTransitioning(true), 50);
-      }, 500);
-    } else if (currentProjectIndex === infiniteProjects.length - 1) {
-      // At last clone, jump to first real project
-      setTimeout(() => {
-        setIsProjectTransitioning(false);
-        setCurrentProjectIndex(1);
-        setTimeout(() => setIsProjectTransitioning(true), 50);
-      }, 500);
-    }
-  }, [currentProjectIndex, projects.length, infiniteProjects.length]);
-
   // Navigation functions
   const goToPrevious = () => {
     setCurrentImageIndex(prev => prev - 1);
@@ -117,13 +114,19 @@ const Page = () => {
     setCurrentImageIndex(prev => prev + 1);
   };
 
-  // Project navigation functions - Updated for slider
+  // Project navigation functions
   const goToPreviousProject = () => {
-    setCurrentProjectIndex(prev => prev - 1);
+    console.log('Previous clicked, current index:', currentProjectIndex);
+    setCurrentProjectIndex(
+      currentProjectIndex === 0 ? projects.length - 1 : currentProjectIndex - 1
+    );
   };
 
   const goToNextProject = () => {
-    setCurrentProjectIndex(prev => prev + 1);
+    console.log('Next clicked, current index:', currentProjectIndex);
+    setCurrentProjectIndex(
+      currentProjectIndex === projects.length - 1 ? 0 : currentProjectIndex + 1
+    );
   };
 
   return (
@@ -195,49 +198,110 @@ const Page = () => {
 
       {/* About Us Section */}
       <div className="self-stretch p-[50px] inline-flex flex-col justify-start items-start gap-7">
-        <AboutUsSection />
+        <div className="self-stretch flex flex-col justify-start items-start gap-7">
+          <div className="justify-start text-stone-950 text-5xl font-semibold font-clash">ABOUT US</div>
+          <div className="self-stretch  inline-flex justify-between items-start">
+            <div className="self-stretch p-5 outline  outline-sky-500 inline-flex flex-col justify-start items-start gap-2.5">
+              <div className="w-80 py-5 flex flex-col justify-start items-start gap-10 ">
+                <div className="self-stretch justify-start text-stone-900 text-xl font-bold font-work">WHO WE ARE</div>
+                <div className="self-stretch justify-start text-stone-900 text-lg font-medium font-work leading-relaxed">We are a foundation dedicated to bridging the gap between traditional education and real-world problem solving through Science, Technology, Engineering, Arts, and Mathematics (STEAM) by empowering young minds both within and beyond the academic community to foster innovation, create values and drive transformation.</div>
+              </div>
+            </div>
+            <div className="self-stretch p-5 outline  outline-sky-500 inline-flex flex-col justify-start items-start gap-2.5">
+              <div className="w-80 py-5 flex flex-col justify-start items-start gap-10 ">
+                <div className="self-stretch justify-start text-stone-900 text-xl font-bold font-work">WHAT WE DO</div>
+                <div className="w-80 justify-start text-stone-900 text-lg font-medium font-work leading-relaxed">We involve students in real-world projects that address genuine challenges. Working alongside experts and professionals from various fields, they gain mentorship, industry knowledge, and practical experience. These collaborations help students bring innovative ideas to life while building solutions that truly matter</div>
+              </div>
+            </div>
+            <div className="self-stretch p-5 outline  outline-sky-500 inline-flex flex-col justify-start items-start gap-2.5">
+              <div className="w-80 py-5 flex flex-col justify-start items-start gap-10 ">
+                <div className="self-stretch justify-start text-stone-900 text-xl font-bold font-work">OUR GOAL</div>
+                <div className="w-80 justify-start text-stone-900 text-lg font-medium font-work leading-relaxed">We empower the next generation to use their talents, ideas, and skills to inspire change, create value, and drive transformation.</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
 
       {/* Projects Section */}
       <section className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-0 pt-12 md:pt-[150px] pb-0 px-4 md:px-[50px] relative self-stretch w-full flex-[0_0_auto]">
         <div className="flex flex-col w-full md:w-[550px] items-start gap-4 md:gap-[30px] relative">
-          <h2 className="relative w-fit mt-[-1.00px] font-clash font-normal text-[#351f14] text-2xl md:text-[50px] text-left md:text-right leading-[30px]">
+          <h2 className="relative w-fit mt-[-1.00px] font-clash font-normal text-[#351f14] text-2xl md:text-[50px] text-left md:text-right tracking-[0] leading-tight md:leading-[115px]">
             ONGOING PROJECTS
           </h2>
 
           <p className="relative w-full md:w-[474px] font-work font-normal text-[#1c1b1a] text-base md:text-lg tracking-[0] leading-relaxed md:leading-[21px]">
-            {projects[Math.max(0, Math.min(currentProjectIndex - 1, projects.length - 1))].description}
+            {projects[currentProjectIndex].description}
           </p>
         </div>
 
-        <div className="flex w-full md:w-[677px] items-center gap-2 md:gap-5 relative">
+        <div className="flex w-full md:w-[677px] items-center gap-2 md:gap-5 relative overflow-hidden">
           <Button
             variant="ghost"
             className="p-0 h-auto hover:scale-110 transition-transform z-50 relative flex-shrink-0"
             onClick={goToPreviousProject}
           >
-            <ChevronLeftIcon className="w-[80px] h-[80px] text-[#351f14]" />
+            <ChevronLeftIcon className="w-8 h-8 md:w-[50px] md:h-[50px] text-[#351f14]" />
           </Button>
 
-          <div className="relative flex-1 grow h-64 md:h-[572px] overflow-hidden">
-            <div
-              className={`flex ${isProjectTransitioning ? 'transition-transform duration-500 ease-in-out' : ''}`}
-              style={{ transform: `translateX(-${currentProjectIndex * 100}%)` }}
-            >
-              {infiniteProjects.map((project, index) => (
-                <div key={index} className="w-full flex-shrink-0 flex items-center justify-center">
-                  <div className="flex flex-col w-48 md:w-[446px] items-center gap-2 md:gap-5 border-none rounded-none">
-                    <div className="p-0 w-full">
-                      <div className="relative self-stretch w-full h-48 md:h-[540px] "
-                        style={{ backgroundImage: `url(${project.mainImage})`, backgroundSize: 'cover', backgroundPosition: '50% 50%' }} />
-                      <p className="relative self-stretch font-work font-semibold text-[#351f14] text-sm md:text-lg text-center tracking-[0] leading-[normal] py-1 md:py-2">
-                        {project.title}
-                      </p>
-                    </div>
+          <div className="relative flex-1 grow h-64 md:h-[572px] flex items-center justify-center">
+            <div className="relative w-full h-full flex items-center justify-center">
+              {projects.map((project, index) => {
+                const position = index - currentProjectIndex;
+                const isActive = index === currentProjectIndex;
+                const isPrev = position === -1 || (currentProjectIndex === 0 && index === projects.length - 1);
+                const isNext = position === 1 || (currentProjectIndex === projects.length - 1 && index === 0);
+
+                let transform = '';
+                let zIndex = 0;
+                let scale = '0.7';
+                let opacity = '0.5';
+
+                if (isActive) {
+                  transform = 'translateX(0px)';
+                  zIndex = 30;
+                  scale = '1';
+                  opacity = '1';
+                } else if (isPrev) {
+                  transform = 'translateX(-60px) md:translateX(-120px)';
+                  zIndex = 20;
+                  scale = '0.8';
+                  opacity = '0.7';
+                } else if (isNext) {
+                  transform = 'translateX(60px) md:translateX(120px)';
+                  zIndex = 20;
+                  scale = '0.8';
+                  opacity = '0.7';
+                } else {
+                  transform = 'translateX(0px)';
+                  zIndex = 10;
+                  scale = '0.6';
+                  opacity = '0';
+                }
+
+                return (
+                  <div
+                    key={index}
+                    className="absolute transition-all duration-700 ease-in-out"
+                    style={{
+                      transform: `${transform} scale(${scale})`,
+                      zIndex,
+                      opacity,
+                    }}
+                  >
+                    <Card className="flex flex-col w-48 md:w-[446px] items-center gap-2 md:gap-5 shadow-[4px_4px_20px_#00000040] border-none rounded-none">
+                      <CardContent className="p-0 w-full">
+                        <div className="relative self-stretch w-full h-48 md:h-[540px] shadow-[4px_4px_50px_#0000000d]"
+                          style={{ backgroundImage: `url(${project.mainImage})`, backgroundSize: 'cover', backgroundPosition: '50% 50%' }} />
+                        <p className="relative self-stretch font-work font-semibold text-[#351f14] text-sm md:text-lg text-center tracking-[0] leading-[normal] py-1 md:py-2">
+                          {project.title}
+                        </p>
+                      </CardContent>
+                    </Card>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -246,7 +310,7 @@ const Page = () => {
             className="p-0 h-auto hover:scale-110 transition-transform z-50 relative flex-shrink-0"
             onClick={goToNextProject}
           >
-            <ChevronRightIcon className="w-[80px] h-[80px] text-[#351f14]" />
+            <ChevronRightIcon className="w-8 h-8 md:w-[50px] md:h-[50px] text-[#351f14]" />
           </Button>
         </div>
       </section>
@@ -280,18 +344,18 @@ const Page = () => {
           <Button
             variant="outline"
             size="icon"
-            className="rounded-full bg-[#26AADB] border-none h-12 w-12 md:h-[60px] md:w-[60px] hover:bg-[#1d8eb8]"
+            className="rounded-full bg-[#26AADB] border-none h-6 w-6 md:h-8 md:w-8 hover:bg-[#1d8eb8]"
             onClick={goToPrevious}
           >
-            <ChevronLeftIcon className="w-[80px] h-[80px] text-white" />
+            <ChevronLeftIcon className="h-3 w-3 md:h-4 md:w-4 text-white" />
           </Button>
           <Button
             variant="outline"
             size="icon"
-            className="rounded-full bg-[#26AADB] border-none h-12 w-12 md:h-[60px] md:w-[60px] hover:bg-[#1d8eb8]"
+            className="rounded-full bg-[#26AADB] border-none h-6 w-6 md:h-8 md:w-8 hover:bg-[#1d8eb8]"
             onClick={goToNext}
           >
-            <ChevronRightIcon className="w-[80px] h-[80px] text-white" />
+            <ChevronRightIcon className="h-3 w-3 md:h-4 md:w-4 text-white" />
           </Button>
         </div>
       </section>
