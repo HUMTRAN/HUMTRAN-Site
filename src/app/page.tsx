@@ -1,9 +1,8 @@
 "use client"
-import { ChevronLeftIcon, ChevronRightIcon, Youtube, Facebook, X, Linkedin } from "lucide-react";
+import { Youtube, Facebook, X, Linkedin } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import AboutUsSection from "../../about-section";
 
@@ -18,11 +17,9 @@ const Page = () => {
   // Gallery images array
   const galleryImages = [
     { src: "/gallery.png", alt: "Humtran gallery 1" },
-    { src: "/gallery.png", alt: "Humtran gallery 2" },
-    { src: "/gallery.png", alt: "Humtran gallery 3" },
-    { src: "/gallery.png", alt: "Humtran gallery 4" },
-    { src: "/gallery.png", alt: "Humtran gallery 5" },
-  ];
+    { src: "/gallery-2.png", alt: "Humtran gallery 2" },
+    { src: "/gallery-3.png", alt: "Humtran gallery 3" },
+    { src: "/gallery-4.png", alt: "Humtran gallery 4" }];
 
   // Projects array
   const projects = [
@@ -212,13 +209,14 @@ const Page = () => {
         </div>
 
         <div className="flex w-full md:w-[677px] items-center gap-2 md:gap-5 relative">
-          <Button
-            variant="ghost"
-            className="p-0 h-auto hover:scale-110 transition-transform z-50 relative flex-shrink-0"
+          <Image
+            src="/CaretLeft.svg"
+            alt="Previous project"
+            width={50}
+            height={50}
+            className="w-[50px] h-[50px] cursor-pointer hover:scale-110 transition-transform z-50 relative flex-shrink-0"
             onClick={goToPreviousProject}
-          >
-            <ChevronLeftIcon className="w-[80px] h-[80px] text-[#351f14]" />
-          </Button>
+          />
 
           <div className="relative flex-1 grow h-64 md:h-[572px] overflow-hidden">
             <div
@@ -241,13 +239,14 @@ const Page = () => {
             </div>
           </div>
 
-          <Button
-            variant="ghost"
-            className="p-0 h-auto hover:scale-110 transition-transform z-50 relative flex-shrink-0"
+          <Image
+            src="/CaretRight.svg"
+            alt="Next project"
+            width={50}
+            height={50}
+            className="w-[50px] h-[50px] cursor-pointer hover:scale-110 transition-transform z-50 relative flex-shrink-0"
             onClick={goToNextProject}
-          >
-            <ChevronRightIcon className="w-[80px] h-[80px] text-[#351f14]" />
-          </Button>
+          />
         </div>
       </section>
 
@@ -276,23 +275,23 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="flex gap-2 justify-center">
-          <Button
-            variant="outline"
-            size="icon"
-            className="rounded-full bg-[#26AADB] border-none h-12 w-12 md:h-[60px] md:w-[60px] hover:bg-[#1d8eb8]"
+        <div className="flex gap-10 justify-center">
+          <Image
+            src="/CaretLeftBig.svg"
+            alt="Previous image"
+            width={50}
+            height={50}
+            className="w-[50px] h-[50px] cursor-pointer hover:scale-110 transition-transform"
             onClick={goToPrevious}
-          >
-            <ChevronLeftIcon className="w-[80px] h-[80px] text-white" />
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            className="rounded-full bg-[#26AADB] border-none h-12 w-12 md:h-[60px] md:w-[60px] hover:bg-[#1d8eb8]"
+          />
+          <Image
+            src="/CaretRightBig.svg"
+            alt="Next image"
+            width={50}
+            height={50}
+            className="w-[50px] h-[50px] cursor-pointer hover:scale-110 transition-transform"
             onClick={goToNext}
-          >
-            <ChevronRightIcon className="w-[80px] h-[80px] text-white" />
-          </Button>
+          />
         </div>
       </section>
 
@@ -313,7 +312,7 @@ const Page = () => {
       </section>
 
       {/* Footer */}
-      <footer className="flex flex-col items-start gap-6 md:gap-[50px] px-0 py-6 md:py-[50px] relative self-stretch w-full flex-[0_0_auto] bg-[#351f14]">
+      <footer className="flex flex-col items-start gap-6 md:gap-[50px] px-0 py-6 md:py-[50px] relative self-stretch w-full flex-[0_0_auto] bg-[#170902]">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0 px-4 md:px-[50px] py-0 relative self-stretch w-full flex-[0_0_auto]">
           <div className="inline-flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-10 relative flex-[0_0_auto]">
             {navItems.map((item, index) => (
