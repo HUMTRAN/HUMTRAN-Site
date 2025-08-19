@@ -331,7 +331,7 @@ const Page = () => {
       {/* Call to Action Section */}
       <section className="flex flex-col w-full items-center px-4 md:px-[50px] relative flex-[0_0_auto] h-64 md:h-[432px]" style={{ backgroundImage: 'linear-gradient(0deg, rgba(53,31,20,0.6) 0%, rgba(53,31,20,0.6) 100%), url(/footer.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="flex flex-col max-w-[1000px] w-full md:w-[1000px] items-center justify-center gap-4 md:gap-[30px] relative flex-[0_0_auto] h-full px-4">
-          <h2 className="relative self-stretch mt-[-1.00px] font-clash font-normal text-white text-2xl md:text-[50px] text-center tracking-[0] leading-[normal]">
+          <h2 className="relative self-stretch mt-[-1.00px] font-clash font-semibold text-white text-2xl md:text-[50px] text-center tracking-[0] leading-[normal]">
             JOIN US NOW
           </h2>
 
