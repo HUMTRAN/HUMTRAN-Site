@@ -17,15 +17,18 @@ const aboutUsData = [
 
 const AboutUsSection = () => {
     return (
-        <div className="self-stretch flex flex-col justify-start items-start gap-7">
+        <div className="self-stretch flex flex-col justify-start items-start md:px-[50px] px-4 gap-7">
             <div className="justify-start text-stone-950 text-5xl font-semibold font-clash">ABOUT US</div>
-            <div className="self-stretch inline-flex justify-between items-start">
+
+            {/* Responsive grid container */}
+            <div className="self-stretch grid grid-cols-1 lg:grid-cols-3 gap-5">
                 {aboutUsData.map((item, index) => (
                     <div
                         key={index}
-                        className="group self-stretch p-5 outline outline-sky-500 inline-flex flex-col justify-start items-start gap-2.5 hover:bg-[#27ABDC] transition-colors duration-300 cursor-pointer"
+                        className="group p-5 outline outline-sky-500 flex flex-col justify-start items-start gap-2.5 hover:bg-[#27ABDC] transition-colors duration-300 cursor-pointer h-full"
                     >
-                        <div className="w-[383px] py-5 flex flex-col justify-start items-start gap-10">
+                        {/* Responsive width container */}
+                        <div className="w-full lg:w-[383px] py-5 flex flex-col justify-start items-start gap-10">
                             <div className="self-stretch justify-start text-stone-900 group-hover:text-white text-xl font-bold font-work">
                                 {item.title}
                             </div>

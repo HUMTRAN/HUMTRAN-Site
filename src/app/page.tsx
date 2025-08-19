@@ -44,6 +44,9 @@ const Page = () => {
   const [currentProjectIndex, setCurrentProjectIndex] = useState(1); // Start at 1 (first real project)
   const [isProjectTransitioning, setIsProjectTransitioning] = useState(true);
 
+  // Mobile menu state
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   // Create infinite projects array with clones
   const infiniteProjects = [
     { ...projects[projects.length - 1] }, // Clone of last project
@@ -138,12 +141,12 @@ const Page = () => {
             />
           </div>
 
-          <div className="flex items-center relative self-stretch overflow-x-auto md:overflow-visible">
+          {/* Desktop nav links */}
+          <div className="hidden md:flex items-center relative self-stretch overflow-x-auto md:overflow-visible">
             {navItems.map((item, index) => (
               <React.Fragment key={item.title}>
                 <div
-                  className={`inline-flex items-center justify-center px-4 md:px-[50px] py-3 md:py-5 relative self-stretch flex-[0_0_auto] ${index < navItems.length - 1 ? 'border-r border-[#27ABDC]' : ""
-                    }  ${item.active ? "bg-[#27ABDC]" : ""}`}
+                  className={`inline-flex items-center justify-center px-4 md:px-[50px] py-3 md:py-5 relative self-stretch flex-[0_0_auto] ${index < navItems.length - 1 ? 'border-r border-[#27ABDC]' : ""}  ${item.active ? "bg-[#27ABDC]" : ""}`}
                 >
                   <div
                     className={`relative font-work font-normal ${item.active ? "text-white" : "text-[#1c1b1a]"} text-sm md:text-lg tracking-[0] leading-[27px] whitespace-nowrap`}
@@ -154,7 +157,39 @@ const Page = () => {
               </React.Fragment>
             ))}
           </div>
+
+          {/* Mobile menu button */}
+          <button
+            className="block md:hidden p-2 focus:outline-none"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+          >
+            <div className="w-6 h-6 flex flex-col justify-center items-center">
+              <span className={`block w-5 h-0.5 bg-[#1c1b1a] transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : 'mb-1'}`}></span>
+              <span className={`block w-5 h-0.5 bg-[#1c1b1a] transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : 'mb-1'}`}></span>
+              <span className={`block w-5 h-0.5 bg-[#1c1b1a] transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+            </div>
+          </button>
         </nav>
+
+        {/* Mobile menu */}
+        {isMobileMenuOpen && (
+          <div className="block md:hidden w-full bg-white border-t border-[#27ABDC]">
+            {navItems.map((item, index) => (
+              <div
+                key={item.title}
+                className={`w-full px-4 py-3 ${index < navItems.length - 1 ? 'border-b border-[#27ABDC]' : ""} ${item.active ? "bg-[#27ABDC]" : ""}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <div
+                  className={`font-work font-normal ${item.active ? "text-white" : "text-[#1c1b1a]"} text-sm tracking-[0] leading-[27px]`}
+                >
+                  {item.title}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
 
         <Separator className="relative self-stretch w-full h-px bg-[#27ABDC]" />
       </header>
@@ -163,7 +198,7 @@ const Page = () => {
       <section className="flex flex-col items-start gap-6 md:gap-[30px] pt-6 md:pt-[50px] pb-12 md:pb-[150px] px-4 md:px-[50px] relative self-stretch w-full flex-[0_0_auto]">
         <div className="flex flex-col md:flex-row max-w-[1340px] items-start md:items-end gap-6 md:gap-[39px] relative w-full flex-[0_0_auto]">
           <div className="inline-flex flex-col items-start justify-end relative flex-[0_0_auto]">
-            <h1 className="relative w-fit mt-[-1.00px] font-clash font-bold text-[#170902] text-4xl md:text-[70px] tracking-[0] leading-none">
+            <h1 className="relative w-fit mt-[-1.00px] font-clash font-bold text-[#170902] text-[70px] tracking-[0] leading-none">
               HUMTRAN
             </h1>
 
@@ -191,15 +226,13 @@ const Page = () => {
       </section>
 
       {/* About Us Section */}
-      <div className="self-stretch p-[50px] inline-flex flex-col justify-start items-start gap-7">
-        <AboutUsSection />
-      </div>
+      <AboutUsSection />
 
 
       {/* Projects Section */}
       <section className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-0 pt-12 md:pt-[150px] pb-0 px-4 md:px-[50px] relative self-stretch w-full flex-[0_0_auto]">
         <div className="flex flex-col w-full md:w-[550px] items-start gap-4 md:gap-[30px] relative">
-          <h2 className="relative w-fit mt-[-1.00px] font-clash font-normal text-[#351f14] text-2xl md:text-[50px] text-left md:text-right leading-[30px]">
+          <h2 className="relative w-fit mt-[-1.00px] font-clash  text-5xl font-semibold   text-[#170902] text-2xl md:text-[50px] text-left md:text-right leading-[60px]">
             ONGOING PROJECTS
           </h2>
 
@@ -208,28 +241,28 @@ const Page = () => {
           </p>
         </div>
 
-        <div className="flex w-full md:w-[677px] items-center gap-2 md:gap-5 relative">
+        <div className="flex w-full md:w-[677px] items-center gap-4 md:gap-5 relative">
           <Image
             src="/CaretLeft.svg"
             alt="Previous project"
             width={50}
             height={50}
-            className="w-[50px] h-[50px] cursor-pointer hover:scale-110 transition-transform z-50 relative flex-shrink-0"
+            className="w-8 h-8 md:w-[50px] md:h-[50px] cursor-pointer hover:scale-110 transition-transform z-50 relative flex-shrink-0"
             onClick={goToPreviousProject}
           />
 
-          <div className="relative flex-1 grow h-64 md:h-[572px] overflow-hidden">
+          <div className="relative flex-1 grow h-80 md:h-[572px] overflow-hidden">
             <div
               className={`flex ${isProjectTransitioning ? 'transition-transform duration-500 ease-in-out' : ''}`}
               style={{ transform: `translateX(-${currentProjectIndex * 100}%)` }}
             >
               {infiniteProjects.map((project, index) => (
                 <div key={index} className="w-full flex-shrink-0 flex items-center justify-center">
-                  <div className="flex flex-col w-48 md:w-[446px] items-center gap-2 md:gap-5 border-none rounded-none">
+                  <div className="flex flex-col w-72 md:w-[446px] items-center gap-2 md:gap-5 border-none rounded-none">
                     <div className="p-0 w-full">
-                      <div className="relative self-stretch w-full h-48 md:h-[540px] "
+                      <div className="relative self-stretch w-full h-72 md:h-[540px]"
                         style={{ backgroundImage: `url(${project.mainImage})`, backgroundSize: 'cover', backgroundPosition: '50% 50%' }} />
-                      <p className="relative self-stretch font-work font-semibold text-[#351f14] text-sm md:text-lg text-center tracking-[0] leading-[normal] py-1 md:py-2">
+                      <p className="relative self-stretch font-work font-semibold text-[#351f14] text-base md:text-lg text-center tracking-[0] leading-[normal] py-2 md:py-2">
                         {project.title}
                       </p>
                     </div>
@@ -244,7 +277,7 @@ const Page = () => {
             alt="Next project"
             width={50}
             height={50}
-            className="w-[50px] h-[50px] cursor-pointer hover:scale-110 transition-transform z-50 relative flex-shrink-0"
+            className="w-8 h-8 md:w-[50px] md:h-[50px] cursor-pointer hover:scale-110 transition-transform z-50 relative flex-shrink-0"
             onClick={goToNextProject}
           />
         </div>
@@ -252,7 +285,7 @@ const Page = () => {
 
       {/* Gallery Section */}
       <section className="flex flex-col items-center gap-6 md:gap-[50px] px-4 md:px-0 py-12 md:py-[150px] relative self-stretch w-full flex-[0_0_auto]">
-        <h2 className="relative self-stretch mt-[-1.00px] font-clash font-normal text-[#351f14] text-2xl md:text-[50px] text-center tracking-[0] leading-[normal]">
+        <h2 className="relative self-stretch mt-[-1.00px] font-clash  text-[#170902] text-5xl font-semibold    text-center tracking-[0] leading-[normal]">
           GALLERY
         </h2>
 
@@ -275,13 +308,13 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="flex gap-10 justify-center">
+        <div className="flex gap-4 md:gap-10 justify-center">
           <Image
             src="/CaretLeftBig.svg"
             alt="Previous image"
             width={50}
             height={50}
-            className="w-[50px] h-[50px] cursor-pointer hover:scale-110 transition-transform"
+            className="w-10 h-10 md:w-[50px] md:h-[50px] cursor-pointer hover:scale-110 transition-transform"
             onClick={goToPrevious}
           />
           <Image
@@ -289,7 +322,7 @@ const Page = () => {
             alt="Next image"
             width={50}
             height={50}
-            className="w-[50px] h-[50px] cursor-pointer hover:scale-110 transition-transform"
+            className="w-10 h-10 md:w-[50px] md:h-[50px] cursor-pointer hover:scale-110 transition-transform"
             onClick={goToNext}
           />
         </div>
