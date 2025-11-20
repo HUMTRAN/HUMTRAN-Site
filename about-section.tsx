@@ -11,7 +11,7 @@ const aboutUsData = [
     },
     {
         title: "EDUCATION SHOULD CONTRIBUTE TO SOCIOPOLITICAL, AND SOCIOECONOMIC IMPACT.",
-        description: "HUMTRAN believes that education must extend beyond personal advancement to serve the broader purpose of building a just, fair, and progressive society. As a Foundation, HUMTRAN is deeply committed to working in synergy with thought leaders, policymakers, legal practitioners, and reform advocates to reflect on and contribute to issues surrounding social justice and equity.."
+        description: "HUMTRAN believes that education must extend beyond personal advancement to serve the broader purpose of building a just, fair, and progressive society. As a Foundation, HUMTRAN is deeply committed to working in synergy with thought leaders, policymakers, legal practitioners, and reform advocates to reflect on and contribute to issues surrounding social justice and equity."
     }
 ];
 
