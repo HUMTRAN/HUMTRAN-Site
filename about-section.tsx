@@ -18,7 +18,7 @@ const aboutUsData = [
 const AboutUsSection = () => {
     return (
         <div className="self-stretch flex flex-col justify-start items-start md:px-[50px] px-4 gap-7">
-            <div className="justify-start text-stone-950 text-5xl font-semibold font-clash">ABOUT US</div>
+            <div className="justify-start text-stone-950 text-5xl font-semibold font-clash">OUR PHILOSOPHY</div>
 
             {/* Responsive grid container */}
             <div className="self-stretch grid grid-cols-1 lg:grid-cols-3 gap-5">
