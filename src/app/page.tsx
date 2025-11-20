@@ -203,7 +203,7 @@ const Page = () => {
             </h1>
 
             <p className="relative w-fit font-work font-normal italic text-[#170902] text-[17px] tracking-[0] leading-none">
-              Empowering minds &amp; driving transformation.
+              Empowering young minds &amp; driving transformation.
             </p>
           </div>
         </div>
