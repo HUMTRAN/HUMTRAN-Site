@@ -2,12 +2,12 @@
 
 const aboutUsData = [
     {
-        title: "OUR PHILOSOPHY",
-        description: "Education should produce Value Creators Not Job Seekers - HUMTRAN believes every young person carries untapped creative capacity. Through STEAM-focused learning (Science, Technology, Engineering, Arts, Mathematics), the organization equips students not just with knowledge, but with the ability to design, build, invent, and pioneer solutions that shape industries and reshape the future.."
+        title: "EDUCATION SHOULD PRODUCE VALUE CREATORS - NOT JOB SEEKERS",
+        description: "HUMTRAN believes in inspiring young minds to harness untapped creative capacity for value creation. Through STEAM-focused learning (Science, Technology, Engineering, Arts, Mathematics), the organization equips students not just with knowledge, but with the ability to design, build, invent, and pioneer solutions that shape industries and reshape the future.."
     },
     {
-        title: "WHAT WE DO",
-        description: "We design unique and customizable educational solutions that promote hands-on learning, critical thinking, and creativity through partnerships with academic and non-academic institutions, community programs, and individual initiatives within our global network."
+        title: "EDUCATION SHOULD TRANSLATE INTO REAL-WORLD SOLUTIONS - NOT JUST THEORIES",
+        description: "HUMTRAN ensures that learning becomes functional, productive, and impactful. Through Foundation-backed projects and innovation programs, HUMTRAN supports regeneration of industries, and creation of new brands, products, advanced technologies and systems that can solve practical problems, and drive real economic impact."
     },
     {
         title: "OUR GOAL",
