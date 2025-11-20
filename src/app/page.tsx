@@ -336,10 +336,7 @@ const Page = () => {
           </h2>
 
           <p className="relative self-stretch font-work font-medium text-white text-sm md:text-lg text-center tracking-[0] leading-relaxed md:leading-[normal]">
-            Every idea has the power to change a life. Join us in shaping the
-            next generation of innovators, creators, and problem-solvers. Be
-            part of the transformation because the future is built by those who
-            dare to act.
+            At HUMTRAN, we strongly believe that Education must be a primary driver of transformation. Join us on our move to build a generation that doesn’t wait for the world to change, but those who engineers the change, designs the solutions, and leads the transformation.
           </p>
         </div>
       </section>
@@ -377,7 +374,7 @@ const Page = () => {
 
         <div className="flex items-center justify-center gap-2.5 px-4 md:px-[50px] py-0 relative self-stretch w-full flex-[0_0_auto]">
           <p className="relative flex-1 mt-[-1.00px] font-work font-normal text-white text-sm md:text-lg tracking-[0] leading-[21px] text-center md:text-left">
-            Copyright © 2021 — Humtran. All rights reserved.
+            Copyright © 2025 — Humtran. All rights reserved.
           </p>
         </div>
       </footer>
