@@ -210,7 +210,7 @@ const Page = () => {
 
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-0 relative self-stretch w-full flex-[0_0_auto]">
           <p className="relative w-full md:w-96 font-work font-normal text-[#1c1b1a] text-base md:text-lg tracking-[0] leading-relaxed md:leading-[27px]">
-            We are a foundation dedicated to bridging the gap between conventional education and real-world problem-solving through Science, Technology, Engineering, Arts, and Mathematics (STEAM), empowering young minds within and beyond the academic community to foster innovation, create values, and drive meaningful Sociopolitical and Socioeconomic transformation.
+            We are a Foundation dedicated to bridging the gap between conventional education and real-world problem-solving through Science, Technology, Engineering, Arts, and Mathematics (STEAM), empowering young minds within and beyond the academic community to foster innovation, create values, and drive meaningful Sociopolitical and Socioeconomic transformation.
           </p>
 
           <div className="w-full md:w-auto flex justify-center">
