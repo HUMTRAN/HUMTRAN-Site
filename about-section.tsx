@@ -3,7 +3,7 @@
 const aboutUsData = [
     {
         title: "EDUCATION SHOULD PRODUCE VALUE CREATORS - NOT JOB SEEKERS",
-        description: "HUMTRAN believes in inspiring young minds to harness untapped creative capacity for value creation. Through STEAM-focused learning (Science, Technology, Engineering, Arts, Mathematics), the organization equips students not just with knowledge, but with the ability to design, build, invent, and pioneer solutions that shape industries and reshape the future."
+        description: "HUMTRAN believes in inspiring young minds and harnessing untapped creative capacity for value creation. Through STEAM-focused learning (Science, Technology, Engineering, Arts, Mathematics), the organization equips students not just with knowledge, but with the ability to design, build, invent, and pioneer solutions that shape industries and reshape the future."
     },
     {
         title: "EDUCATION SHOULD TRANSLATE INTO REAL-WORLD SOLUTIONS - NOT JUST THEORIES",
