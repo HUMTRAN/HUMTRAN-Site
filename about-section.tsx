@@ -2,8 +2,8 @@
 
 const aboutUsData = [
     {
-        title: "WHO WE ARE",
-        description: "We are a foundation dedicated to bridging the gap between traditional education and real-world problem solving through Science, Technology, Engineering, Arts, and Mathematics (STEAM) by empowering young minds both within and beyond the academic community to foster innovation, create values and drive transformation."
+        title: "OUR PHILOSOPHY",
+        description: "Education should produce Value Creators Not Job Seekers - HUMTRAN believes every young person carries untapped creative capacity. Through STEAM-focused learning (Science, Technology, Engineering, Arts, Mathematics), the organization equips students not just with knowledge, but with the ability to design, build, invent, and pioneer solutions that shape industries and reshape the future.."
     },
     {
         title: "WHAT WE DO",
