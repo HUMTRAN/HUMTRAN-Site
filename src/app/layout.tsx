@@ -18,7 +18,7 @@ const workSans = Work_Sans({
 })
 export const metadata: Metadata = {
   title: "Humtran",
-  description: "Empowering minds & driving transformation",
+  description: "Empowering young minds & driving transformation",
 };
 
 export default function RootLayout({
