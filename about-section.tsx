@@ -10,8 +10,8 @@ const aboutUsData = [
         description: "HUMTRAN ensures that learning becomes functional, productive, and impactful. Through Foundation-backed projects and innovation programs, HUMTRAN supports regeneration of industries, and creation of new brands, products, advanced technologies and systems that can solve practical problems, and drive real economic impact."
     },
     {
-        title: "OUR GOAL",
-        description: "Our goal is to cultivate a generation of innovative thinkers and problem-solvers who are equipped with the skills, mindset, and confidence to tackle real-world challenges and contribute meaningfully to society."
+        title: "EDUCATION SHOULD CONTRIBUTE TO SOCIOPOLITICAL SOCIOCULTURAL, AND SOCIOPOLITICAL TRANSFORMATION — NOT JUST ACADEMIC PROGRESSION.",
+        description: "HUMTRAN believes that education must extend beyond personal advancement to serve the broader purpose of building a just, fair, and progressive society. As a Foundation, HUMTRAN is deeply committed to working in synergy with thought leaders, policymakers, legal practitioners, and reform advocates to reflect on and contribute to issues surrounding social justice and equity.."
     }
 ];
 
