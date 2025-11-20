@@ -24,13 +24,13 @@ const Page = () => {
   // Projects array
   const projects = [
     {
-      title: "SECURITY APP",
-      description: "A student-led mobile app for quick alerts and real-time safety updates, built with experts to help protect communities.",
+      title: "HUMGUARD - SECURITY APP",
+      description: "A security-based mobile app for quick alerts and real-time safety updates, built to democratise access to security for citizens.",
       mainImage: "/security-app.png"
     },
     {
       title: "PLASTIC FLOOR FINISHING",
-      description: "A group of students has embarked on a creative project that transforms discarded PET bottles into materials for floor finishing. By recycling and processing the bottles, they aim to produce durable, cost-effective, and eco-friendly alternatives to conventional floor finishes.",
+      description: "A combination of recycling and upcycling project to transform recycled PET bottles into floor finishing. The project aims to reduce environmental polution, and carbon emission, and foter eco-friendly environment.",
       mainImage: "/floor.png"
     },
 
