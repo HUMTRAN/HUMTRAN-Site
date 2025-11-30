@@ -364,9 +364,8 @@ const Page = () => {
           </div>
 
           <Button className="inline-flex items-center justify-center gap-2.5 p-4 md:p-[30px] relative flex-[0_0_auto] bg-[#26aadb] rounded-none hover:bg-[#1d8eb8] w-full md:w-auto">
-            <span className="relative w-fit mt-[-1.00px] font-work font-semibold text-white text-sm md:text-lg tracking-[0] leading-[normal] whitespace-nowrap">
-    onClick={() =>
-    window.open("https://chat.whatsapp.com/ImPEeaF2ZkZ6C5d4iKJjQF?mode=hqrt3", "_blank")}>   
+            <span className="relative w-fit mt-[-1.00px] font-work font-semibold text-white text-sm md:text-lg tracking-[0] leading-[normal] whitespace-nowrap"  onClick={() =>
+       window.open("https://chat.whatsapp.com/ImPEeaF2ZkZ6C5d4iKJjQF?mode=hqrt3", "_blank")}>   
               JOIN US
             </span>
           </Button>
