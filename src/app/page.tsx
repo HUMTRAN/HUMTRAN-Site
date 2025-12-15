@@ -30,7 +30,7 @@ const Page = () => {
     },
     {
       title: "PLASTIC FLOOR FINISHING",
-      description: "A combination of recycling and upcycling project to transform recycled PET bottles into durable floor finishing. The project aims to reduce environmental pollution, carbon emission, and foster eco-friendly environment.",
+      description: "A combination of recycling and upcycling project to transform recycled plastic waste into durable floor finishing. The project aims to reduce environmental pollution, carbon emission, and foster eco-friendly environment.",
       mainImage: "/floor.png"
     },
 
